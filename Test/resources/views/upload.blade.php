@@ -13,7 +13,7 @@
     <title>Image Upload</title>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Image Upload</h1>
         <legend>
         <form action="{{ URL::to('upload-image')}}" method="POST" enctype="multipart/form-data">
