@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('image_models', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');
-            $table->string('title')->nullable();
-            $table->string('slug')->nullable();
-            $table->string('filename')->nullable();
-            $table->string('alttext')->nullable();
-            $table->timestamps();
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('image_models');
+        Schema::dropIfExists('password_resets');
     }
 };

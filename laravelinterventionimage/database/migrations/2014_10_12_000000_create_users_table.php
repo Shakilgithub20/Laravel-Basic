@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('image_models', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');
-            $table->string('title')->nullable();
-            $table->string('slug')->nullable();
-            $table->string('filename')->nullable();
-            $table->string('alttext')->nullable();
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('image_models');
+        Schema::dropIfExists('users');
     }
 };

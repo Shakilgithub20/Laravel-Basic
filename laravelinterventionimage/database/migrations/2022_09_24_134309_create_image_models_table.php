@@ -14,11 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('image_models', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');
-            $table->string('title')->nullable();
-            $table->string('slug')->nullable();
-            $table->string('filename')->nullable();
-            $table->string('alttext')->nullable();
+            $table->increments('id');
+            $table->string('filename');
             $table->timestamps();
         });
     }
