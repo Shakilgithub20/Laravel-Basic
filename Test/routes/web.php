@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LayoutController;
 
 // use App\Http\Controllers\ImageUploadController;
 
@@ -53,3 +54,6 @@ Route::group(['middleware' => ['checkloggedin','isstudent']], function () {
 // // Route::get('image/upload','ImageUploadController@fileCreate');
 // Route::post('image/upload/store','ImageUploadController@fileStore');
 // Route::post('image/delete','ImageUploadController@fileDestroy');
+//LayOut::
+Route::get('index', [LayoutController::class, 'index']);
+Route::get('dashboard', [LayoutController::class, 'dashboard']);
