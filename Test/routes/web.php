@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UploadController;
+
 // use App\Http\Controllers\ImageUploadController;
 
 /*
@@ -44,9 +44,9 @@ Route::group(['middleware' => ['checkloggedin','isstudent']], function () {
     Route::get('student', [HomeController::class, 'student']);
 });
 
-//Upload::Image
-Route::get('/upload', [UploadController::class,'upload']);
-Route::post('upload-image', [UploadController::class,'uploadimage']);
+// //Upload::Image
+// Route::get('/upload', [UploadController::class,'upload']);
+// Route::post('upload-image', [UploadController::class,'uploadimage']);
 
 //ImageUpload
 // Route::get('image/upload', [ImageUploadController::class,'fileCreate']);
